@@ -221,7 +221,14 @@ function! s:init_errorformat() " {{{1
 
     " Parse hyperref warnings
     setlocal efm+=%-C(hyperref)%.%#on\ input\ line\ %l.
+
+    setlocal efm+=%C(%\\w%#)\ %#%m
   endif
+
+  setlocal efm+=%Z(%.%#
+
+  setlocal efm+=%Z\ %#
+  setlocal efm+=%C%m
 
   " Ignore unmatched lines
   setlocal efm+=%-G%.%#
